@@ -1,0 +1,267 @@
+@import "tailwindcss";
+
+/* ------------------------------------------------------------------
+   LIV Design System tokens (mirrors liv-provider-web)
+   ------------------------------------------------------------------ */
+:root {
+  --primary-50: #eef3f5;
+  --primary-200: #b3c8d1;
+  --primary-500: #3d6072;
+  --primary-600: #2a4b5f;
+  --primary-800: #1b303c;
+
+  --secondary-100: #fbf3cf;
+  --secondary-300: #f0da5f;
+  --secondary-400: #e9cb2e;
+  --secondary-500: #cbae1f;
+
+  --text-0: #ffffff;
+  --text-200: #e2e7e8;
+  --text-300: #c8d0d3;
+  --text-500: #7d8a91;
+  --text-600: #5f6c74;
+  --text-900: #17242b;
+
+  --bg-bone: #f0f1ec;
+  --bg-base: #ffffff;
+
+  --success: #2f7d63;
+  --success-bg: #e6f2ec;
+  --success-text: #1f5a46;
+
+  --warning: #b8891a;
+  --warning-bg: #fbf1d6;
+  --warning-text: #7a5a0f;
+
+  --info: #567b8a;
+  --info-bg: #e7eef1;
+  --info-text: #2a4b5f;
+
+  --custody-bg: #e9eef0;
+  --custody-border: #567b8a;
+  --custody-text: #2a4b5f;
+
+  /* Outside the token set (spec: "fuera de token") */
+  --nav-inactive: #6b7880;
+  --icon-box-border: rgba(42, 75, 95, 0.14);
+
+  --type-display-size: 1.875rem;
+  --type-display-leading: 2.375rem;
+  --type-h1-size: 1.625rem;
+  --type-h1-leading: 2rem;
+  --type-h2-size: 1.25rem;
+  --type-h2-leading: 1.75rem;
+  --type-h4-size: 1rem;
+  --type-h4-leading: 1.5rem;
+  --type-body-lg-size: 1rem;
+  --type-body-lg-leading: 1.5rem;
+  --type-body-size: 0.9375rem;
+  --type-body-leading: 1.4375rem;
+  --type-body-sm-size: 0.8125rem;
+  --type-body-sm-leading: 1.25rem;
+  --type-caption-size: 0.75rem;
+  --type-caption-leading: 1rem;
+  --type-step-size: 3.5rem;
+  --type-step-leading: 3.5rem;
+}
+
+/* Desktop: > 768px (spec: mobile is <= 768px) */
+@media (width > 48rem) {
+  :root {
+    --type-display-size: 2.5rem;
+    --type-display-leading: 3rem;
+    --type-h1-size: 2rem;
+    --type-h1-leading: 2.5rem;
+    --type-h2-size: 1.625rem;
+    --type-h2-leading: 2.125rem;
+    --type-h4-size: 1.125rem;
+    --type-h4-leading: 1.625rem;
+    --type-body-lg-size: 1.0625rem;
+    --type-body-lg-leading: 1.625rem;
+    --type-step-size: 5.125rem;
+    --type-step-leading: 5rem;
+  }
+}
+
+@theme inline {
+  --font-sans: var(--font-montserrat), ui-sans-serif, system-ui, sans-serif;
+
+  --breakpoint-md: 48.0625rem; /* mobile <= 768px */
+
+  --color-primary-50: var(--primary-50);
+  --color-primary-200: var(--primary-200);
+  --color-primary-500: var(--primary-500);
+  --color-primary-600: var(--primary-600);
+  --color-primary-800: var(--primary-800);
+
+  --color-secondary-100: var(--secondary-100);
+  --color-secondary-300: var(--secondary-300);
+  --color-secondary-400: var(--secondary-400);
+  --color-secondary-500: var(--secondary-500);
+
+  --color-text-0: var(--text-0);
+  --color-text-200: var(--text-200);
+  --color-text-300: var(--text-300);
+  --color-text-500: var(--text-500);
+  --color-text-600: var(--text-600);
+  --color-text-900: var(--text-900);
+
+  --color-bone: var(--bg-bone);
+  --color-base: var(--bg-base);
+
+  --color-success: var(--success);
+  --color-success-bg: var(--success-bg);
+  --color-success-text: var(--success-text);
+  --color-warning: var(--warning);
+  --color-warning-bg: var(--warning-bg);
+  --color-warning-text: var(--warning-text);
+  --color-info: var(--info);
+  --color-info-bg: var(--info-bg);
+  --color-info-text: var(--info-text);
+  --color-custody-bg: var(--custody-bg);
+  --color-custody-border: var(--custody-border);
+  --color-custody-text: var(--custody-text);
+
+  --color-nav-inactive: var(--nav-inactive);
+  --color-icon-box-border: var(--icon-box-border);
+
+  --shadow-card: 0 1px 2px rgba(23, 36, 43, 0.06);
+
+  --text-display: var(--type-display-size);
+  --text-display--line-height: var(--type-display-leading);
+  --text-display--font-weight: 700;
+  --text-h1: var(--type-h1-size);
+  --text-h1--line-height: var(--type-h1-leading);
+  --text-h1--font-weight: 700;
+  --text-h2: var(--type-h2-size);
+  --text-h2--line-height: var(--type-h2-leading);
+  --text-h2--font-weight: 600;
+  --text-h4: var(--type-h4-size);
+  --text-h4--line-height: var(--type-h4-leading);
+  --text-h4--font-weight: 600;
+  --text-body-lg: var(--type-body-lg-size);
+  --text-body-lg--line-height: var(--type-body-lg-leading);
+  --text-body: var(--type-body-size);
+  --text-body--line-height: var(--type-body-leading);
+  --text-body-sm: var(--type-body-sm-size);
+  --text-body-sm--line-height: var(--type-body-sm-leading);
+  --text-caption: var(--type-caption-size);
+  --text-caption--line-height: var(--type-caption-leading);
+  --text-caption--font-weight: 600;
+  --text-step: var(--type-step-size);
+  --text-step--line-height: var(--type-step-leading);
+  --text-step--font-weight: 300;
+}
+
+/* Storytelling mode, resolved purely in CSS so the first paint is already
+   correct (no 2600px hint flashing on mobile, no CLS on mode switch). */
+@custom-variant animated {
+  @media (width >= 64rem) and (height >= 640px) and (prefers-reduced-motion: no-preference) {
+    @slot;
+  }
+}
+
+@custom-variant static-story {
+  @media not all and (width >= 64rem) and (height >= 640px) and (prefers-reduced-motion: no-preference) {
+    @slot;
+  }
+}
+
+html {
+  scrollbar-gutter: stable;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+body {
+  background: var(--bg-bone);
+  color: var(--text-900);
+  font-family: var(--font-sans);
+  font-size: var(--type-body-size);
+  line-height: var(--type-body-leading);
+  -webkit-font-smoothing: antialiased;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  text-wrap: balance;
+}
+
+p {
+  text-wrap: pretty;
+}
+
+::selection {
+  background: var(--secondary-100);
+  color: var(--text-900);
+}
+
+:focus-visible {
+  outline: 2px solid var(--primary-500);
+  outline-offset: 3px;
+}
+
+.on-dark :focus-visible {
+  outline-color: var(--secondary-400);
+}
+
+section[id],
+[id="contenido"] {
+  scroll-margin-top: 84px;
+}
+
+.skip-link {
+  position: absolute;
+  left: 16px;
+  top: -60px;
+  z-index: 100;
+  padding: 12px 16px;
+  border-radius: 8px;
+  background: var(--bg-base);
+  color: var(--primary-800);
+  font-weight: 600;
+  text-decoration: none;
+  box-shadow: var(--shadow-card);
+}
+
+.skip-link:focus {
+  top: 12px;
+}
+
+/* Story roll: fade the top and bottom 14% */
+.roll-mask {
+  mask-image: linear-gradient(
+    to bottom,
+    transparent 0,
+    #000 14%,
+    #000 86%,
+    transparent 100%
+  );
+}
+
+.roll-face {
+  will-change: transform, opacity;
+  transform-style: preserve-3d;
+}
+
+.step-underline {
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 600ms cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+
+[data-active="true"] .step-underline {
+  transform: scaleX(1);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .step-underline {
+    transition: none;
+  }
+}
