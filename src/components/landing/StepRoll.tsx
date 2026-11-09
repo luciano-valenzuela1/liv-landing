@@ -106,7 +106,7 @@ export function StepRoll() {
   const current = STORY_STEPS[step - 1];
 
   return (
-    <div className="static-story:hidden">
+    <div className="hidden animated:block">
       {/* Screen-reader version: full list. Visual roll below is aria-hidden. */}
       <ol className="sr-only">
         {STORY_STEPS.map((s, i) => (

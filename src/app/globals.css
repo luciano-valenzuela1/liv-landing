@@ -161,8 +161,16 @@
   }
 }
 
+/* Mobile/tablet storytelling: sticky status header + scrolling steps. */
+@custom-variant mobile-story {
+  @media (width < 64rem) and (prefers-reduced-motion: no-preference) {
+    @slot;
+  }
+}
+
+/* Fallback: reduced motion, or a wide-but-short viewport (landscape phone). */
 @custom-variant static-story {
-  @media not all and (width >= 64rem) and (height >= 640px) and (prefers-reduced-motion: no-preference) {
+  @media (prefers-reduced-motion: reduce), ((width >= 64rem) and (height < 640px)) {
     @slot;
   }
 }

@@ -9,6 +9,7 @@ import {
 import { useAudience } from "@/components/audience/AudienceProvider";
 import { CtaLink } from "@/components/ui/CtaLink";
 import { StepRoll } from "./StepRoll";
+import { StepScroll } from "./StepScroll";
 import { StaticSteps } from "./StaticSteps";
 
 /**
@@ -29,6 +30,7 @@ export function HowItWorks() {
         </div>
 
         <StepRoll />
+        <StepScroll />
         <StaticSteps />
 
         <div className="flex flex-col items-center gap-3 pt-2 text-center">

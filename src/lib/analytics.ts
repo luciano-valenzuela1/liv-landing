@@ -19,7 +19,7 @@ export type AnalyticsEvent =
     }
   | {
       name: "story_step_view";
-      props: { step: number; mode: "animated" | "static" };
+      props: { step: number; mode: "animated" | "mobile" | "static" };
     }
   | { name: "story_skip"; props: { target_step: number | "rubros" } }
   | { name: "faq_open"; props: { question_id: string } }

@@ -28,7 +28,7 @@ export function StaticSteps() {
   }, []);
 
   return (
-    <ol className="animated:hidden flex flex-col gap-3">
+    <ol className="hidden static-story:flex flex-col gap-3">
       {STORY_STEPS.map((s, i) => {
         const custody = s.tone === "custody";
         return (
