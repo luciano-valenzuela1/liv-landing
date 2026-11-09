@@ -113,7 +113,7 @@ export function StepScroll() {
             >
               <div className="inline-flex flex-col items-stretch gap-1.5 self-start">
                 <span
-                  className={`text-[64px] font-light leading-[64px] tracking-[-0.02em] tabular-nums ${
+                  className={`text-[48px] font-light leading-[48px] tracking-[-0.02em] tabular-nums ${
                     isCustody ? "text-primary-600" : "text-info"
                   }`}
                 >
@@ -124,7 +124,7 @@ export function StepScroll() {
               <h3 className="text-h2 font-semibold text-primary-800">
                 {s.title}
               </h3>
-              <p className="text-body-lg text-text-600">{s.text}</p>
+              <p className="text-[15px] leading-[23px] text-text-600">{s.text}</p>
               {s.badge && (
                 <Pill tone="custody" className="self-start">
                   {s.badge}

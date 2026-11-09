@@ -45,24 +45,24 @@
   --nav-inactive: #6b7880;
   --icon-box-border: rgba(42, 75, 95, 0.14);
 
-  --type-display-size: 1.875rem;
-  --type-display-leading: 2.375rem;
-  --type-h1-size: 1.625rem;
-  --type-h1-leading: 2rem;
-  --type-h2-size: 1.25rem;
-  --type-h2-leading: 1.75rem;
+  --type-display-size: 1.75rem;
+  --type-display-leading: 2.1875rem;
+  --type-h1-size: 1.375rem;
+  --type-h1-leading: 1.75rem;
+  --type-h2-size: 1.125rem;
+  --type-h2-leading: 1.625rem;
   --type-h4-size: 1rem;
   --type-h4-leading: 1.5rem;
   --type-body-lg-size: 1rem;
   --type-body-lg-leading: 1.5rem;
-  --type-body-size: 0.9375rem;
-  --type-body-leading: 1.4375rem;
+  --type-body-size: 0.875rem;
+  --type-body-leading: 1.375rem;
   --type-body-sm-size: 0.8125rem;
   --type-body-sm-leading: 1.25rem;
   --type-caption-size: 0.75rem;
   --type-caption-leading: 1rem;
-  --type-step-size: 3.5rem;
-  --type-step-leading: 3.5rem;
+  --type-step-size: 2.75rem;
+  --type-step-leading: 2.75rem;
 }
 
 /* Desktop: > 768px (spec: mobile is <= 768px) */
@@ -78,6 +78,8 @@
     --type-h4-leading: 1.625rem;
     --type-body-lg-size: 1.0625rem;
     --type-body-lg-leading: 1.625rem;
+    --type-body-size: 0.9375rem;
+    --type-body-leading: 1.4375rem;
     --type-step-size: 5.125rem;
     --type-step-leading: 5rem;
   }

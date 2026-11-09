@@ -49,7 +49,7 @@ export function Hero() {
         <h1 className="text-display font-bold tracking-[-0.01em]">
           {copy.h1}
         </h1>
-        <p className="max-w-[620px] text-body-lg tracking-[0.005em] text-text-200 md:text-[17px] md:leading-[27px]">
+        <p className="max-w-[620px] text-[15px] leading-[23px] tracking-[0.005em] text-text-200 md:text-[17px] md:leading-[27px]">
           {copy.lead}
         </p>
 

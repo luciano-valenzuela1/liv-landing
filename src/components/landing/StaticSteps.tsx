@@ -49,7 +49,7 @@ export function StaticSteps() {
               className="inline-flex shrink-0 flex-col items-stretch gap-1"
             >
               <span
-                className={`text-[56px] font-light leading-[56px] tabular-nums max-md:text-[48px] max-md:leading-[52px] ${
+                className={`text-[56px] font-light leading-[56px] tabular-nums max-md:text-[40px] max-md:leading-[44px] ${
                   custody ? "text-primary-600" : "text-info"
                 }`}
               >
@@ -61,7 +61,7 @@ export function StaticSteps() {
               <h3 className="text-h4 font-semibold text-primary-800">
                 {s.title}
               </h3>
-              <p className="text-body text-text-600">{s.text}</p>
+              <p className="text-[15px] leading-[23px] text-text-600">{s.text}</p>
               <div className="mt-1 flex flex-wrap gap-1.5">
                 <Pill tone={s.tone} className="px-2.5">
                   {s.state}
