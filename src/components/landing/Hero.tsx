@@ -1,19 +1,14 @@
 "use client";
 
-import {
-  AUDIENCE_COPY,
-  AUDIENCE_QUESTION,
-  HERO_NOTES,
-} from "@/content/landing";
+import { AUDIENCE_COPY, AUDIENCE_QUESTION } from "@/content/landing";
 import { useAudience } from "@/components/audience/AudienceProvider";
 import { Logo } from "@/components/ui/Logo";
 import { CtaLink, LoginLink } from "@/components/ui/CtaLink";
 import { AudienceToggle } from "./AudienceToggle";
 
 export function Hero() {
-  const { audience, audienceTouched } = useAudience();
+  const { audience } = useAudience();
   const copy = AUDIENCE_COPY[audience];
-  const note = audienceTouched ? HERO_NOTES[audience] : HERO_NOTES.untouched;
 
   return (
     <section
@@ -60,7 +55,6 @@ export function Hero() {
 
         <div className="flex w-full flex-col items-center gap-2.5 pt-1">
           <CtaLink location="hero" arrow />
-          <span className="text-body-sm text-text-200">{note}</span>
         </div>
       </div>
     </section>

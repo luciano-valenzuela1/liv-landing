@@ -60,14 +60,6 @@ export const AUDIENCE_COPY: Record<
   },
 };
 
-export const HERO_NOTES = {
-  untouched: "Registrarte es gratis. Elegís tu perfil en el siguiente paso.",
-  empresa:
-    "Registrarte es gratis. Vas a registrarte como empresa; podés cambiarlo en el siguiente paso.",
-  prestador:
-    "Registrarte es gratis. Vas a registrarte como prestador; podés cambiarlo en el siguiente paso.",
-} as const;
-
 export type IconName =
   | "Shield"
   | "Lock"
