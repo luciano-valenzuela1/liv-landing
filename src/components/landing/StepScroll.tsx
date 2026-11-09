@@ -5,6 +5,7 @@ import { Lock } from "lucide-react";
 import { STATUS_CARD_TITLE, STORY_STEPS } from "@/content/landing";
 import { track } from "@/lib/analytics";
 import { Pill } from "@/components/ui/Pill";
+import { KeyFactText } from "./KeyFactText";
 
 const STEPS = STORY_STEPS.length;
 
@@ -74,7 +75,7 @@ export function StepScroll() {
         </div>
 
         <div
-          className={`mt-2.5 flex items-start gap-2.5 rounded-lg border px-3 py-2 text-body-sm font-medium ${
+          className={`mt-2.5 flex items-center gap-2.5 rounded-lg border px-3 py-2 text-body-sm font-medium ${
             custody
               ? "border-custody-border bg-custody-bg text-custody-text"
               : "border-primary-800 bg-primary-800 text-text-0"
@@ -83,10 +84,10 @@ export function StepScroll() {
           <Lock
             size={16}
             strokeWidth={2}
-            className="mt-0.5 shrink-0 text-secondary-400"
+            className="shrink-0 text-secondary-400"
             aria-hidden="true"
           />
-          <span>{current.keyFact}</span>
+          <KeyFactText step={step} />
         </div>
       </div>
 

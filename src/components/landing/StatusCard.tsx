@@ -1,6 +1,7 @@
 import { Check, Lock } from "lucide-react";
 import { STATUS_CARD_TITLE, STORY_STEPS } from "@/content/landing";
 import { Pill } from "@/components/ui/Pill";
+import { KeyFactText } from "./KeyFactText";
 
 /** Service status panel for the storytelling (presentational, step is 1-based). */
 export function StatusCard({ step }: { step: number }) {
@@ -63,7 +64,7 @@ export function StatusCard({ step }: { step: number }) {
       </ol>
 
       <div
-        className={`flex items-start gap-3.5 rounded-xl border-2 px-[18px] py-4 ${
+        className={`flex items-center gap-3.5 rounded-xl border-2 px-[18px] py-4 ${
           isCustody
             ? "border-custody-border bg-custody-bg text-custody-text"
             : "border-primary-800 bg-primary-800 text-text-0"
@@ -72,7 +73,9 @@ export function StatusCard({ step }: { step: number }) {
         <span className="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-[10px] bg-primary-600">
           <Lock size={22} strokeWidth={2} className="text-secondary-400" aria-hidden="true" />
         </span>
-        <span className="text-body font-medium">{current.keyFact}</span>
+        <span className="text-body font-medium">
+          <KeyFactText step={step} />
+        </span>
       </div>
     </div>
   );
