@@ -8,7 +8,8 @@ import {
   useState,
   type ReactNode,
 } from "react";
-import { ROUTES, type Audience } from "@/content/landing";
+import type { Audience } from "@/content/landing";
+import { getLoginHref, getRegisterHref } from "@/lib/routes";
 import { track } from "@/lib/analytics";
 
 interface AudienceState {
@@ -16,6 +17,8 @@ interface AudienceState {
   audienceTouched: boolean;
   /** Registration href for every "Crear mi cuenta" CTA. */
   registerHref: string;
+  /** Login href for every "Iniciar sesión" link. */
+  loginHref: string;
   selectAudience: (audience: Audience, selector: "hero" | "beneficios") => void;
 }
 
@@ -41,9 +44,8 @@ export function AudienceProvider({ children }: { children: ReactNode }) {
     () => ({
       audience,
       audienceTouched,
-      registerHref: audienceTouched
-        ? `${ROUTES.register}?perfil=${audience}`
-        : ROUTES.register,
+      registerHref: getRegisterHref(audience, audienceTouched),
+      loginHref: getLoginHref(audience, audienceTouched),
       selectAudience,
     }),
     [audience, audienceTouched, selectAudience],

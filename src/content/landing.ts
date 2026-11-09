@@ -14,8 +14,6 @@ export type Audience = "empresa" | "prestador";
 export type PillTone = "info" | "custody" | "success" | "warning";
 
 export const ROUTES = {
-  register: "/registro",
-  login: "/login",
   terms: "/terminos",
   privacy: "/privacidad",
   contact: "/contacto",

@@ -1,7 +1,7 @@
 "use client";
 
 import { ArrowRight } from "lucide-react";
-import { CTA_LABEL, LOGIN_LABEL, ROUTES } from "@/content/landing";
+import { CTA_LABEL, LOGIN_LABEL } from "@/content/landing";
 import { track, type CtaLocation, type LoginLocation } from "@/lib/analytics";
 import { useAudience } from "@/components/audience/AudienceProvider";
 
@@ -67,9 +67,10 @@ export function LoginLink({
   location: LoginLocation;
   className?: string;
 }) {
+  const { loginHref } = useAudience();
   return (
     <a
-      href={ROUTES.login}
+      href={loginHref}
       onClick={() => track({ name: "login_click", props: { location } })}
       className={`inline-flex min-h-11 items-center text-[15px] font-semibold ${className}`}
     >
