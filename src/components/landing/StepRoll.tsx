@@ -60,7 +60,7 @@ export function StepRoll() {
         const offset = i - pos;
         const abs = Math.abs(offset);
         const scale = Math.max(0.78, 1 - abs * 0.14);
-        el.style.transform = `translateY(calc(-50% + ${(offset * 270).toFixed(1)}px)) rotateX(${(-offset * 32).toFixed(1)}deg) scale(${scale.toFixed(3)})`;
+        el.style.transform = `translateY(${(offset * 270).toFixed(1)}px) rotateX(${(-offset * 32).toFixed(1)}deg) scale(${scale.toFixed(3)})`;
         el.style.opacity = Math.max(0, 1 - abs * 0.55).toFixed(2);
         el.style.zIndex = String(10 - Math.round(abs * 3));
         el.style.visibility = abs > 1.6 ? "hidden" : "visible";
@@ -133,7 +133,9 @@ export function StepRoll() {
               </p>
             </div>
 
-            <div className="flex min-w-0 flex-[1_1_420px] flex-col gap-4">
+            {/* pt balances the controls row below so the roll's center
+                matches the StatusCard's center */}
+            <div className="flex min-w-0 flex-[1_1_420px] flex-col gap-4 pt-[60px]">
               <div
                 aria-hidden="true"
                 className="roll-mask relative h-[560px] overflow-hidden"
