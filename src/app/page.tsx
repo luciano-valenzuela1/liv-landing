@@ -4,6 +4,7 @@ import { Categories } from "@/components/landing/Categories";
 import { Faq } from "@/components/landing/Faq";
 import { FinalCta } from "@/components/landing/FinalCta";
 import { Footer } from "@/components/landing/Footer";
+import { JsonLd } from "@/components/seo/JsonLd";
 import { Hero } from "@/components/landing/Hero";
 import { HowItWorks } from "@/components/landing/HowItWorks";
 import { SectionViewTracker } from "@/components/landing/SectionViewTracker";
@@ -31,6 +32,7 @@ export default function Home() {
       </main>
       <Footer />
       <SectionViewTracker />
+      <JsonLd />
     </AudienceProvider>
   );
 }
