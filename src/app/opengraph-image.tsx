@@ -20,8 +20,8 @@ export default async function OpengraphImage() {
           flexDirection: "column",
           justifyContent: "space-between",
           padding: 72,
-          background: "#1b303c",
-          color: "#ffffff",
+          background: "#28475b",
+          color: "#f0f1ec",
         }}
       >
         <img src={logoSrc} alt="" width={168} height={120} />
@@ -37,8 +37,8 @@ export default async function OpengraphImage() {
           >
             Servicios con respaldo legal y el pago en garantía.
           </div>
-          <div style={{ fontSize: 30, color: "#e2e7e8" }}>
-            Fondos custodiados por Balanz · Registrarte es gratis
+          <div style={{ fontSize: 30, color: "#f0f1ec" }}>
+            Fondos en custodia · Registrarte es gratis
           </div>
         </div>
         <div
@@ -47,7 +47,7 @@ export default async function OpengraphImage() {
             width: 200,
             height: 10,
             borderRadius: 9999,
-            background: "#e9cb2e",
+            background: "#e0c32a",
           }}
         />
       </div>

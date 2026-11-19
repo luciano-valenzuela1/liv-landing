@@ -78,3 +78,28 @@ export function LoginLink({
     </a>
   );
 }
+
+/** Inline text link to the register URL (audience-aware, same as the CTAs). */
+export function RegisterTextLink({
+  children,
+  className = "",
+}: {
+  children: React.ReactNode;
+  className?: string;
+}) {
+  const { registerHref, audience, audienceTouched } = useAudience();
+  return (
+    <a
+      href={registerHref}
+      onClick={() =>
+        track({
+          name: "cta_click",
+          props: { location: "rubros", audience, audience_touched: audienceTouched },
+        })
+      }
+      className={className}
+    >
+      {children}
+    </a>
+  );
+}

@@ -1,6 +1,6 @@
 import type { Audience } from "@/content/landing";
 
-export type CtaLocation = "header" | "hero" | "navbar" | "story" | "final";
+export type CtaLocation = "header" | "hero" | "navbar" | "story" | "rubros" | "final";
 export type LoginLocation = "header" | "navbar" | "final";
 
 export type AnalyticsEvent =
@@ -23,7 +23,9 @@ export type AnalyticsEvent =
     }
   | { name: "story_skip"; props: { target_step: number | "rubros" } }
   | { name: "faq_open"; props: { question_id: string } }
-  | { name: "section_view"; props: { section_id: string } };
+  | { name: "section_view"; props: { section_id: string } }
+  | { name: "contact_submit"; props: { status: "ok" } }
+  | { name: "analysis_click"; props: { location: "final" } };
 
 type Sink = (event: AnalyticsEvent) => void;
 

@@ -18,7 +18,9 @@ export function TrustStrip() {
               <h3 className="text-h4 font-semibold min-[1180px]:whitespace-nowrap">
                 {item.title}
               </h3>
-              <p className="text-body text-text-600">{item.text}</p>
+              <p className="text-body-sm text-text-600 md:text-[14px] md:leading-[22px]">
+                {item.text}
+              </p>
             </div>
           </li>
         ))}

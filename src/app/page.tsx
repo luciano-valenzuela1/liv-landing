@@ -1,6 +1,7 @@
 import { AudienceProvider } from "@/components/audience/AudienceProvider";
 import { Benefits } from "@/components/landing/Benefits";
 import { Categories } from "@/components/landing/Categories";
+import { Contact } from "@/components/landing/Contact";
 import { Faq } from "@/components/landing/Faq";
 import { FinalCta } from "@/components/landing/FinalCta";
 import { Footer } from "@/components/landing/Footer";
@@ -28,6 +29,7 @@ export default function Home() {
         <HowItWorks />
         <Categories />
         <Faq />
+        <Contact />
         <FinalCta />
       </main>
       <Footer />

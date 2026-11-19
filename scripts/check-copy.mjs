@@ -6,7 +6,7 @@ import { readFileSync } from "node:fs";
 const FORBIDDEN_TERMS = [
   "empleado", "empleada", "empleo", "puesto", "vacante", "oferta laboral",
   "trabajo", "sueldo", "salario",
-  "jefe", "patrón", "equipo", "rrhh", "contratar gente",
+  "jefe", "patrón", "equipo", "rrhh", "indemnización", "despido", "contratar gente",
   "fichar", "horario",
   "riesgo cero", "evitar impuestos", "evitar cargas",
 ];
@@ -21,7 +21,7 @@ const errors = [];
 for (const text of strings) {
   const lower = text.toLowerCase();
   for (const term of FORBIDDEN_TERMS) {
-    const re = new RegExp(`(?<![\\p{L}])${term}(?![\\p{L}])`, "u");
+    const re = new RegExp(`(?<![\\p{L}])${term}(?:e?s)?(?![\\p{L}])`, "u");
     if (re.test(lower)) errors.push(`forbidden "${term}" in: "${text}"`);
   }
   if (/\[[^\]]*\]/.test(text)) errors.push(`bracketed text in: "${text}"`);

@@ -16,8 +16,10 @@ export type PillTone = "info" | "custody" | "success" | "warning";
 export const ROUTES = {
   terms: "/terminos",
   privacy: "/privacidad",
-  contact: "/contacto",
+  contact: "#contacto",
 } as const;
+
+export const CONTACT_EMAIL = "consultas@livapp.com.ar";
 
 export const CTA_LABEL = "Crear mi cuenta";
 export const LOGIN_LABEL = "Iniciar sesión";
@@ -45,14 +47,14 @@ export const AUDIENCE_COPY: Record<
   { h1: string; lead: string; benefitsTitle: string; storyClose: string }
 > = {
   empresa: {
-    h1: "Contratá el servicio que necesitás, con respaldo legal.",
-    lead: "Definís qué necesitás, lo acordás con un prestador independiente y pagás con la entrega confirmada. Hasta entonces, los fondos quedan en custodia.",
+    h1: "Contratá por resultado, pagá cuando te entregan.",
+    lead: "Definís qué necesitás, lo acordás con un prestador independiente y pagás cuando confirmás la entrega. Si depositás antes, el dinero queda en custodia hasta entonces. Todo dentro de un marco legal sólido y claro.",
     benefitsTitle: "Resolvé lo que necesitás, sin sumar estructura fija.",
     storyClose: "Creá tu cuenta y publicá tu primer briefing.",
   },
   prestador: {
-    h1: "Prestá servicios con el pago en garantía.",
-    lead: "El valor del servicio queda en custodia antes de que empieces. Entregás, presentás tu factura y, con la entrega confirmada, se libera el pago. Vos ponés tu tarifa.",
+    h1: "Vos ponés el precio. LIV se ocupa del cobro.",
+    lead: "Proponés tu tarifa, acordás los hitos con la empresa y, antes de aceptar, ves si el pago ya está en custodia. Cuando entregás, la empresa tiene 48 horas hábiles para aprobar: si no responde, se aprueba sola. Registrarte es gratis.",
     benefitsTitle: "Prestá servicios con autonomía y el pago protegido.",
     storyClose: "Creá tu cuenta y recibí tu primera propuesta.",
   },
@@ -80,13 +82,13 @@ export interface IconItem {
 export const TRUST_ITEMS: readonly IconItem[] = [
   {
     icon: "Shield",
-    title: "Marco legal validado",
-    text: "Por un estudio jurídico, pensado para cumplir con la normativa argentina.",
+    title: "Marco legal sólido y claro",
+    text: "Una modalidad de contratación encuadrada en el Código Civil y Comercial de la Nación y en la Ley de Modernización Laboral 27.802.",
   },
   {
     icon: "Lock",
-    title: "Fondos custodiados por Balanz",
-    text: "El dinero de cada operación no lo administra LIV.",
+    title: "Fondos en custodia",
+    text: "El dinero de cada servicio queda resguardado hasta que se valida el cumplimiento de los objetivos acordados.",
   },
   {
     icon: "FileCheck",
@@ -122,12 +124,12 @@ export const BENEFITS: Record<Audience, readonly IconItem[]> = {
     {
       icon: "Receipt",
       title: "Sin perseguir pagos",
-      text: "Presentás tu factura, se confirma la entrega y se libera el pago.",
+      text: "Entregás, la empresa confirma la prestación, facturás y se libera el pago.",
     },
     {
       icon: "TrendingUp",
       title: "Adelanto de Liquidez",
-      text: "Podés solicitar un adelanto financiado por Balanz.",
+      text: "Con historial en LIV, se habilita la opción de cobrar antes: pedís un adelanto sobre tus servicios aprobados y conocés el costo antes de aceptarlo.",
     },
     {
       icon: "SlidersHorizontal",
@@ -165,7 +167,7 @@ export interface StoryStep {
 export const STORY_STEPS: readonly StoryStep[] = [
   {
     title: "Se publica el briefing",
-    text: "La empresa publica un briefing: una descripción de qué necesita, para cuándo y qué espera recibir.",
+    text: "El prestador publica el servicio que ofrece o la empresa lo que necesita. En los dos casos queda claro qué se entrega, para cuándo y con qué resultado.",
     row: "Briefing publicado",
     state: "Briefing publicado",
     tone: "info",
@@ -173,23 +175,23 @@ export const STORY_STEPS: readonly StoryStep[] = [
   },
   {
     title: "LIV conecta a las partes",
-    text: "LIV la conecta con prestadores disponibles. La empresa propone y el prestador acepta.",
+    text: "LIV conecta a empresas con necesidades concretas con prestadores independientes que ofrecen sus servicios. El prestador propone y la empresa acepta.",
     row: "Propuesta aceptada",
     state: "Propuesta aceptada",
     tone: "info",
-    keyFact: "El prestador aceptó la propuesta de la empresa.",
+    keyFact: "La empresa aceptó la propuesta del prestador.",
   },
   {
     title: "Se acuerdan hitos y valor",
-    text: "Definen juntos el valor y los hitos, las etapas que marcan el alcance del servicio, antes de empezar.",
+    text: "Definen juntos los objetivos y los hitos (las etapas que marcan el alcance del servicio) y acuerdan el valor antes de empezar.",
     row: "Hitos y valor acordados",
     state: "Acordado",
     tone: "info",
     keyFact: "Hitos definidos y valor del servicio acordado.",
   },
   {
-    title: "Los fondos quedan en garantía",
-    text: "Antes de empezar, la empresa deposita el valor del servicio en una cuenta de custodia gestionada por Balanz. LIV no administra ese dinero.",
+    title: "El cobro, en manos de LIV",
+    text: "La empresa puede depositar el valor del servicio antes de empezar, con condiciones preferenciales: el dinero queda en custodia en una cuenta exclusiva de una entidad bancaria regulada hasta que se confirma la entrega. Si elige pagar después, LIV le gestiona el cobro y se lo liquida al prestador.",
     row: "Fondos en custodia",
     state: "En custodia",
     tone: "custody",
@@ -216,27 +218,40 @@ export const STORY_STEPS: readonly StoryStep[] = [
 
 export const CATEGORIES_TITLE = "Servicios de todos los rubros.";
 export const CATEGORIES_SUB = "Algunos ejemplos de lo que se resuelve en LIV.";
-export const CATEGORIES_MORE = "Y muchos rubros más.";
+export const CATEGORIES_MORE = "¿No ves tu rubro?";
+export const CATEGORIES_MORE_LINK = "Registrate gratis y publicá tu briefing igual.";
 
 export const CATEGORIES: ReadonlyArray<{ name: string; examples: string[] }> = [
   {
-    name: "Gastronomía y eventos",
+    name: "Gastronomía, hotelería y eventos",
     examples: [
       "Catering por evento",
-      "Servicio de atención para eventos",
+      "Atención de salón por evento",
       "Armado y montaje",
     ],
   },
   {
     name: "Logística y depósito",
-    examples: ["Distribución", "Armado de pedidos por lote", "Inventario"],
+    examples: [
+      "Distribución por ruta",
+      "Armado de pedidos por lote",
+      "Recuento de inventario",
+    ],
   },
   {
     name: "Salud",
     examples: [
-      "Enfermería a domicilio",
-      "Kinesiología y rehabilitación",
-      "Asesoría nutricional",
+      "Refuerzo de enfermería por campaña",
+      "Programas de rehabilitación",
+      "Auditoría de historias clínicas",
+    ],
+  },
+  {
+    name: "Comercio y e-commerce",
+    examples: [
+      "Carga de catálogo",
+      "Fotografía de producto",
+      "Preparación de envíos por lote",
     ],
   },
   {
@@ -244,16 +259,24 @@ export const CATEGORIES: ReadonlyArray<{ name: string; examples: string[] }> = [
     examples: [
       "Conciliación de facturas",
       "Liquidación de impuestos",
-      "Gestión de datos",
+      "Ordenamiento de datos",
     ],
   },
   {
     name: "Marketing y diseño",
-    examples: ["Identidad visual", "Contenido para redes", "Fotografía"],
+    examples: [
+      "Identidad visual",
+      "Contenido para redes por campaña",
+      "Fotografía",
+    ],
   },
   {
     name: "Tecnología",
-    examples: ["Desarrollo web", "Soporte técnico", "Implementación de sistemas"],
+    examples: [
+      "Desarrollo web",
+      "Soporte técnico por incidente",
+      "Implementación de sistemas",
+    ],
   },
   {
     name: "Mantenimiento y oficios",
@@ -274,48 +297,63 @@ export interface FaqItem {
 export const FAQ: readonly FaqItem[] = [
   {
     id: "es-legal",
-    question: "¿Esto es legal?",
+    question: "¿Es legal contratar a través de LIV?",
     answer:
-      "Sí. Es contratación de servicios entre una empresa y un prestador independiente, no una relación laboral. El modelo está diseñado y respaldado por un estudio jurídico, pensado para cumplir con la normativa argentina.",
+      "Sí. LIV conecta empresas con prestadores independientes dentro del marco del Código Civil y Comercial. No se contrata tiempo a disposición: se contratan entregables con objetivos medibles. Cada servicio queda documentado de punta a punta: briefing, hitos, entrega y factura.",
   },
   {
-    id: "entrega-sin-confirmar",
-    question: "¿Qué pasa si la empresa no confirma la entrega?",
-    answer: "Respuesta a definir con LIV: proceso ante desacuerdos y plazos.",
-    pending: true,
+    id: "custodia",
+    question: "¿Cómo funciona la custodia de fondos?",
+    answer:
+      "Podés depositar el valor acordado antes de empezar. En ese caso, el dinero queda en custodia en una cuenta exclusiva de una entidad bancaria regulada y se libera al prestador cuando se valida cada hito.",
+  },
+  {
+    id: "no-conforme",
+    question: "¿Qué pasa si no estoy conforme con la entrega?",
+    answer:
+      "Mientras haya un reclamo abierto, el dinero sigue en custodia. Primero se le pide la corrección al prestador. Si no hay acuerdo, LIV revisa la evidencia cargada contra lo pactado en el briefing y define si corresponde liberar el pago o devolvértelo.",
+  },
+  {
+    id: "sin-aprobacion",
+    question: "¿Y si no apruebo ni reclamo a tiempo?",
+    answer:
+      "Tenés 48 horas hábiles desde que el prestador carga la entrega. Pasado ese plazo sin reclamos, el hito se aprueba automáticamente y se libera el pago.",
+  },
+  {
+    id: "prestador-no-se-presenta",
+    question: "¿Qué pasa si el prestador no se presenta?",
+    answer:
+      "Recuperás el 100% de lo depositado, o lo dejás como saldo a favor, sin costo. Podés volver a publicar el briefing para que lo tome otro prestador.",
   },
   {
     id: "costo",
-    question: "¿Cuánto cuesta usar LIV?",
+    question: "¿Cuánto cuesta?",
     answer:
-      "Registrarte es gratis para empresas y prestadores. Costo por servicio a confirmar con LIV.",
-    pending: true,
+      "Registrarte es gratis. LIV cobra un fee sobre cada servicio y una membresía mensual según la cantidad de briefings que publiques. El prestador no paga nada.",
   },
   {
-    id: "como-cobro",
-    question: "¿Cómo me aseguro de cobrar?",
+    id: "requisitos-prestador",
+    question: "¿Qué necesito para ofrecer mis servicios?",
     answer:
-      "El valor del servicio se deposita en garantía antes de que empieces. Cuando entregás, presentás tu factura y la empresa confirma la entrega, se libera el pago.",
-  },
-  {
-    id: "balanz",
-    question: "¿Quién es Balanz y por qué custodia el dinero?",
-    answer:
-      "El dinero de cada operación queda en una cuenta de custodia gestionada por Balanz hasta que se libera: no lo administra LIV. Descripción de Balanz a confirmar con LIV.",
-    pending: true,
+      "Validar tu identidad en la app y estar inscripto en Monotributo o Autónomos para facturar. Si tu actividad es regulada (salud, electricidad, higiene y seguridad, entre otras), también necesitás matrícula vigente.",
   },
   {
     id: "monotributo",
-    question: "¿Necesito ser monotributista para prestar servicios?",
-    answer: "Respuesta a confirmar con LIV.",
-    pending: true,
+    question: "¿Y si todavía no estoy inscripto en Monotributo?",
+    answer:
+      "Te acompañamos en el alta para que puedas facturar desde tu primer servicio.",
+  },
+  {
+    id: "cuando-cobro",
+    question: "¿Cuándo cobro?",
+    answer:
+      "Cargás la entrega en la app y la empresa tiene 48 horas hábiles para aprobarla. Una vez aprobada, o vencido ese plazo, cargás tu factura y liberamos el pago a tu cuenta bancaria o billetera virtual. En cada briefing ves si los fondos ya están en custodia o si el pago es diferido, antes de aceptar.",
   },
   {
     id: "adelanto-liquidez",
-    question: "¿Qué es el Adelanto de Liquidez?",
+    question: "¿Cuándo puedo pedir un Adelanto de Liquidez?",
     answer:
-      "Un adelanto para prestadores, financiado por Balanz, que podés solicitar. Condiciones a confirmar con LIV.",
-    pending: true,
+      "Se habilita a medida que construís historial en LIV, con servicios cumplidos y bien calificados. Es opcional: antes de pedirlo ves cuánto te cuesta.",
   },
 ];
 
@@ -323,9 +361,13 @@ export const FINAL_TITLE = "Un solo registro, para los dos lados.";
 export const FINAL_TEXT =
   "Es gratis. Al crear tu cuenta elegís si contratás servicios o si los prestás, completás tu perfil y ya podés publicar un briefing o recibir propuestas.";
 
-export const FOOTER_NOTE = "LIV · Fondos custodiados por Balanz.";
+export const FOOTER_NOTE = "LIV · Servicios con respaldo legal y pago en garantía.";
 export const FOOTER_LEGAL = [
   { href: ROUTES.terms, label: "Términos y condiciones" },
   { href: ROUTES.privacy, label: "Privacidad" },
   { href: ROUTES.contact, label: "Contacto" },
 ] as const;
+
+export const CONTACT_TITLE = "Estamos para ayudarte";
+export const CONTACT_SUB = "¿Sabés cuánto puede ahorrar tu empresa?";
+export const CONTACT_ANALYSIS_LABEL = "Quiero mi análisis sin cargo";

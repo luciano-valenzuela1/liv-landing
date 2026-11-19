@@ -70,7 +70,7 @@ export function StatusCard({ step }: { step: number }) {
             : "border-primary-800 bg-primary-800 text-text-0"
         }`}
       >
-        <span className="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-[10px] bg-primary-600">
+        <span className="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-[10px] bg-info">
           <Lock size={22} strokeWidth={2} className="text-secondary-400" aria-hidden="true" />
         </span>
         <span className="text-body font-medium">

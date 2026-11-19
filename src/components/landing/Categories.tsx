@@ -1,9 +1,11 @@
 import {
   CATEGORIES,
   CATEGORIES_MORE,
+  CATEGORIES_MORE_LINK,
   CATEGORIES_SUB,
   CATEGORIES_TITLE,
 } from "@/content/landing";
+import { RegisterTextLink } from "@/components/ui/CtaLink";
 
 export function Categories() {
   return (
@@ -30,7 +32,10 @@ export function Categories() {
             </li>
           ))}
           <li className="border-t border-text-300 py-[18px] text-body font-semibold text-primary-600">
-            {CATEGORIES_MORE}
+            {CATEGORIES_MORE}{" "}
+            <RegisterTextLink className="underline underline-offset-4 hover:text-primary-800">
+              {CATEGORIES_MORE_LINK}
+            </RegisterTextLink>
           </li>
         </ul>
       </div>
